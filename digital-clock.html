@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 World Time Clock - Digital Multi-Timezone Display</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><span class="header-emoji">🌍</span>World Time Clock</h1>
+            <p>Real-time digital clock display across 40+ global timezones</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <!-- Search Section -->
+            <div class="control-section">
+                <div class="control-title">🔍 Search Timezones</div>
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Search by city or timezone (e.g., Tokyo, Asia/Tokyo)..."
+                    >
+                    <button id="searchBtn" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="control-section">
+                <div class="control-title">🌐 Filter by Region</div>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All Zones</button>
+                    <button class="filter-btn" data-filter="asia">Asia</button>
+                    <button class="filter-btn" data-filter="europe">Europe</button>
+                    <button class="filter-btn" data-filter="americas">Americas</button>
+                    <button class="filter-btn" data-filter="africa">Africa</button>
+                    <button class="filter-btn" data-filter="oceania">Oceania</button>
+                    <button class="filter-btn" data-filter="utc">UTC</button>
+                </div>
+            </div>
+
+            <!-- Display Options -->
+            <div class="control-section">
+                <div class="control-title">⚙️ Display Options</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="format24h" checked>
+                        <label for="format24h">24-Hour Format</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="showSeconds" checked>
+                        <label for="showSeconds">Show Seconds</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="showDate">
+                        <label for="showDate">Show Date</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Panel -->
+        <div class="statistics-panel">
+            <div class="stat-item">
+                <div class="stat-value" id="totalTimezones">41</div>
+                <div class="stat-label">Total Timezones</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalRegions">7</div>
+                <div class="stat-label">Regions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="activeClocks">41</div>
+                <div class="stat-label">Active Clocks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="lastUpdate">--:--:--</div>
+                <div class="stat-label">Last Update</div>
+            </div>
+        </div>
+
+        <!-- Clocks Grid -->
+        <div class="clocks-grid" id="clocksGrid">
+            <!-- Clock cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🌍 World Time Clock | Real-time Display Across Global Timezones</p>
+            <p>© 2026 | Built with Vanilla JavaScript | No External Dependencies Required</p>
+        </footer>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
