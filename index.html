@@ -1,305 +1,227 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-CL">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HF Avanzamed - Centro Médico Online Chileno</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073b5c">
+  <meta name="description" content="HF Avanzamed: atención médica general online, cercana y segura para pacientes en Chile.">
+  <meta property="og:title" content="HF Avanzamed | Medicina general online">
+  <meta property="og:description" content="Orientación, evaluación y seguimiento médico desde donde estés.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="public/images/hero-telemedicina.png">
+  <title>HF Avanzamed | Medicina general online en Chile</title>
+  <link rel="preload" as="image" href="public/images/hero-telemedicina.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <p class="logo">🏥 HF Avanzamed</p>
-                <p class="tagline">Salud Conectada</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#nosotros" class="nav-link">Quiénes Somos</a></li>
-                <li><a href="#agendar" class="nav-link">Agendar Hora</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="inicio">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="HF Avanzamed, inicio">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>HF AVANZAMED</strong><small>Centro médico online</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li><a class="nav-cta" href="#agendar">Solicitar atención</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Sección Inicio / Hero -->
-    <section id="inicio" class="hero">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; width: 100%;">
-            <div class="hero-content">
-                <h1 class="hero-title">Tu salud es nuestra prioridad</h1>
-                <p class="hero-subtitle">Accede a atención médica de calidad desde la comodidad de tu hogar. Especialistas certificados disponibles 24/7 para ti.</p>
-                <a href="#agendar" class="btn btn-primary btn-large">Agendar Consulta Hoy</a>
-            </div>
-            <div class="hero-image">
-                <span class="medical-icon">⚕️</span>
-            </div>
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Atención médica online en Chile</p>
+          <h1 id="hero-title">Atención médica <em>cercana</em>, estés donde estés.</h1>
+          <p class="hero-lead">Consulta por problemas de salud frecuentes, revisa tus exámenes y recibe un plan claro de seguimiento desde la comodidad de tu hogar.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#agendar">Solicitar una hora</a>
+            <a class="button button-secondary" href="#como-funciona">Ver cómo funciona <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="trust-list" aria-label="Características de la atención">
+            <li><span aria-hidden="true">✓</span> Consulta 100% online</li>
+            <li><span aria-hidden="true">✓</span> Atención profesional</li>
+            <li><span aria-hidden="true">✓</span> Seguimiento personalizado</li>
+          </ul>
         </div>
+        <div class="hero-visual">
+          <div class="image-shell">
+            <img src="public/images/hero-telemedicina.png" width="1448" height="1086" alt="Médico realizando una consulta por videollamada" fetchpriority="high">
+          </div>
+          <div class="floating-card floating-card-top">
+            <span class="mini-icon" aria-hidden="true">✦</span>
+            <span><strong>Orientación clara</strong><small>Resuelve tus dudas de salud</small></span>
+          </div>
+          <div class="floating-card floating-card-bottom">
+            <span class="avatar" aria-hidden="true">HF</span>
+            <span><strong>Atención humana</strong><small>Escuchamos antes de orientar</small></span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Sección Servicios -->
-    <section id="servicios" class="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle">Contamos con especialistas en diversas áreas médicas para tu bienestar</p>
-            
-            <div class="servicios-grid">
-                <div class="servicio-card">
-                    <span class="servicio-icon">👨‍⚕️</span>
-                    <h3>Medicina General</h3>
-                    <p>Consultas para problemas de salud comunes, chequeos preventivos y orientación médica integral.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <span class="servicio-icon">❤️</span>
-                    <h3>Cardiología</h3>
-                    <p>Evaluación cardiovascular, seguimiento de presión arterial y cuidado del corazón.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <span class="servicio-icon">🫀</span>
-                    <h3>Neumología</h3>
-                    <p>Tratamiento de problemas respiratorios, asma, alergias y evaluación pulmonar.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <span class="servicio-icon">🧠</span>
-                    <h3>Psicología</h3>
-                    <p>Apoyo emocional, estrés, ansiedad y asesoramiento para tu salud mental.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <span class="servicio-icon">🦷</span>
-                    <h3>Odontología</h3>
-                    <p>Consultas dentales, limpiezas y orientación sobre higiene bucal.</p>
-                </div>
-                
-                <div class="servicio-card">
-                    <span class="servicio-icon">👶</span>
-                    <h3>Pediatría</h3>
-                    <p>Atención especializada para niños, vacunación y desarrollo infantil.</p>
-                </div>
-            </div>
-        </div>
+    <section class="confidence-strip" aria-label="Compromisos de atención">
+      <div class="container confidence-grid">
+        <article><span aria-hidden="true">▣</span><div><strong>Desde tu hogar</strong><small>Sin traslados ni salas de espera</small></div></article>
+        <article><span aria-hidden="true">♙</span><div><strong>Evaluación integral</strong><small>Tu historia y contexto importan</small></div></article>
+        <article><span aria-hidden="true">♡</span><div><strong>Trato cercano</strong><small>Información en lenguaje simple</small></div></article>
+        <article><span aria-hidden="true">⌁</span><div><strong>Continuidad</strong><small>Indicaciones y próximos pasos</small></div></article>
+      </div>
     </section>
 
-    <!-- Sección Quiénes Somos -->
-    <section id="nosotros" class="nosotros">
-        <div class="container">
-            <h2 class="section-title">Quiénes Somos</h2>
-            
-            <div class="nosotros-content">
-                <div class="nosotros-text">
-                    <h3>HF Avanzamed</h3>
-                    <p>Somos un centro médico online chileno dedicado a proporcionar atención de salud de excelencia con las más altas estándares de calidad y profesionalismo.</p>
-                    
-                    <h4>Nuestra Misión</h4>
-                    <p>Democratizar el acceso a la atención médica de calidad, eliminando barreras geográficas y temporales para que todos los chilenos puedan recibir cuidado de la salud cuando lo necesiten.</p>
-                    
-                    <h4>Nuestros Valores</h4>
-                    <ul class="valores-list">
-                        <li>✓ Excelencia en el servicio</li>
-                        <li>✓ Profesionalismo médico</li>
-                        <li>✓ Privacidad y confidencialidad</li>
-                        <li>✓ Atención personalizada</li>
-                        <li>✓ Tecnología segura y confiable</li>
-                        <li>✓ Compromiso con tu bienestar</li>
-                    </ul>
-                </div>
-                
-                <div class="nosotros-stats">
-                    <div class="stat-box">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Pacientes Atendidos</span>
-                    </div>
-                    
-                    <div class="stat-box">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Médicos Especialistas</span>
-                    </div>
-                    
-                    <div class="stat-box">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Especialidades</span>
-                    </div>
-                    
-                    <div class="stat-box">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Disponibilidad</span>
-                    </div>
-                </div>
-            </div>
+    <section class="section services" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Servicios</p>
+          <h2 id="services-title">Una primera respuesta para cuidar tu salud</h2>
+          <p>Atención médica general orientada a resolver, acompañar y derivar oportunamente cuando sea necesario.</p>
         </div>
+        <div class="service-grid">
+          <article class="service-card featured">
+            <span class="service-number">01</span>
+            <div class="service-icon" aria-hidden="true">✚</div>
+            <h3>Medicina general online</h3>
+            <p>Evaluación de síntomas frecuentes, enfermedades agudas de baja complejidad y orientación sobre el nivel de atención adecuado.</p>
+            <a href="#agendar">Solicitar evaluación <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <div class="service-icon" aria-hidden="true">⌕</div>
+            <h3>Revisión de exámenes</h3>
+            <p>Explicación comprensible de resultados y definición de los próximos pasos según los antecedentes clínicos.</p>
+            <a href="#agendar">Consultar <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <div class="service-icon" aria-hidden="true">↻</div>
+            <h3>Controles y seguimiento</h3>
+            <p>Continuidad de cuidados, control de evolución y apoyo para organizar indicaciones y derivaciones.</p>
+            <a href="#agendar">Pedir seguimiento <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+        <p class="scope-note"><strong>Importante:</strong> la telemedicina no reemplaza una evaluación presencial cuando existen signos de alarma y no es un servicio de urgencia.</p>
+      </div>
     </section>
 
-    <!-- Sección Agendar Hora -->
-    <section id="agendar" class="agendar">
-        <div class="container">
-            <h2 class="section-title">Agendar Consulta Médica</h2>
-            <p class="section-subtitle">Completa el formulario y nos pondremos en contacto pronto</p>
-            
-            <div class="form-container">
-                <form id="agendarForm" class="form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo *</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="especialidad">Especialidad Requerida *</label>
-                            <select id="especialidad" name="especialidad" required>
-                                <option value="">Selecciona una especialidad</option>
-                                <option value="medicina-general">Medicina General</option>
-                                <option value="cardiologia">Cardiología</option>
-                                <option value="neumologia">Neumología</option>
-                                <option value="psicologia">Psicología</option>
-                                <option value="odontologia">Odontología</option>
-                                <option value="pediatria">Pediatría</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="fecha">Fecha Preferida *</label>
-                            <input type="date" id="fecha" name="fecha" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="razon">Motivo de la Consulta *</label>
-                        <textarea id="razon" name="razon" rows="4" placeholder="Describe brevemente tu motivo de consulta" required></textarea>
-                    </div>
-                    
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="terminos" name="terminos" required>
-                        <label for="terminos">Acepto los términos y condiciones *</label>
-                    </div>
-                    
-                    <div id="formMessage" class="form-message"></div>
-                    
-                    <button type="submit" class="btn btn-primary btn-large">Agendar Consulta</button>
-                </form>
-            </div>
+    <section class="section process" id="como-funciona" aria-labelledby="process-title">
+      <div class="container process-layout">
+        <div class="process-copy">
+          <p class="eyebrow light">Cómo funciona</p>
+          <h2 id="process-title">Simple, claro y sin traslados</h2>
+          <p>Queremos que pedir orientación médica sea un proceso fácil desde el primer contacto.</p>
+          <a class="button button-light" href="#agendar">Comenzar solicitud</a>
         </div>
+        <ol class="steps">
+          <li><span>1</span><div><h3>Solicita una hora</h3><p>Déjanos tus datos de contacto y una descripción general de lo que necesitas.</p></div></li>
+          <li><span>2</span><div><h3>Confirmamos disponibilidad</h3><p>Te contactaremos para coordinar el horario y entregarte las instrucciones de conexión.</p></div></li>
+          <li><span>3</span><div><h3>Conéctate a tu consulta</h3><p>Ten a mano tus antecedentes, medicamentos y exámenes relevantes.</p></div></li>
+          <li><span>4</span><div><h3>Recibe un plan</h3><p>Al finalizar tendrás indicaciones y próximos pasos claramente explicados.</p></div></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="contacto">
-        <div class="container">
-            <h2 class="section-title">Contáctanos</h2>
-            <p class="section-subtitle">Estamos aquí para ayudarte. Comunícate con nosotros de la forma que prefieras</p>
-            
-            <div class="contacto-grid">
-                <div class="contacto-card">
-                    <span class="contacto-icon">📞</span>
-                    <h3>Teléfono</h3>
-                    <p>Llámanos directamente</p>
-                    <a href="tel:+56912345678">+56 9 1234 5678</a>
-                </div>
-                
-                <div class="contacto-card">
-                    <span class="contacto-icon">📧</span>
-                    <h3>Correo Electrónico</h3>
-                    <p>Envíanos un mensaje</p>
-                    <a href="mailto:info@hfavanzamed.cl">info@hfavanzamed.cl</a>
-                </div>
-                
-                <div class="contacto-card">
-                    <span class="contacto-icon">📍</span>
-                    <h3>Ubicación</h3>
-                    <p>Santiago, Chile</p>
-                    <a href="#">Ver en mapa</a>
-                </div>
-            </div>
-            
-            <div class="horario-atencion">
-                <h3>Horario de Atención</h3>
-                <div class="horario-grid">
-                    <div class="horario-item">
-                        <span class="dia">Lunes - Viernes</span>
-                        <span class="hora">08:00 - 20:00</span>
-                    </div>
-                    <div class="horario-item">
-                        <span class="dia">Sábado</span>
-                        <span class="hora">09:00 - 18:00</span>
-                    </div>
-                    <div class="horario-item">
-                        <span class="dia">Domingo</span>
-                        <span class="hora">10:00 - 16:00</span>
-                    </div>
-                    <div class="horario-item">
-                        <span class="dia">Urgencias</span>
-                        <span class="hora">24 Horas</span>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 30px; text-align: center;">
-                    <h4 style="color: var(--dark-blue); margin-bottom: 15px;">Síguenos en Redes Sociales</h4>
-                    <div class="social-links">
-                        <a href="https://facebook.com" class="social-link" target="_blank">Facebook</a>
-                        <a href="https://instagram.com" class="social-link" target="_blank">Instagram</a>
-                        <a href="https://twitter.com" class="social-link" target="_blank">Twitter</a>
-                        <a href="https://linkedin.com" class="social-link" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
+    <section class="section about" id="nosotros" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="public/images/familia-salud.png" width="1448" height="1086" alt="Familia participando en una consulta médica online" loading="lazy">
+          <div class="about-badge"><strong>Salud conectada</strong><span>Atención accesible y humana</span></div>
         </div>
+        <div class="about-copy">
+          <p class="eyebrow">Quiénes somos</p>
+          <h2 id="about-title">Tecnología al servicio de una atención más humana</h2>
+          <p>HF Avanzamed es un proyecto chileno de atención médica online que busca facilitar el acceso a orientación profesional y acompañamiento continuo.</p>
+          <p>Partimos desde la medicina general, con una propuesta centrada en escuchar, explicar y ayudar a cada persona a tomar decisiones informadas sobre su salud.</p>
+          <div class="values">
+            <article><span aria-hidden="true">✓</span><div><strong>Cercanía</strong><small>Una atención respetuosa y comprensible.</small></div></article>
+            <article><span aria-hidden="true">✓</span><div><strong>Responsabilidad</strong><small>Alcances y límites explicados con claridad.</small></div></article>
+            <article><span aria-hidden="true">✓</span><div><strong>Continuidad</strong><small>Un plan concreto para los próximos pasos.</small></div></article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Sobre Nosotros</h4>
-                    <p>HF Avanzamed es tu centro médico online de confianza en Chile, ofreciendo atención de salud profesional y accesible.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#nosotros">Quiénes Somos</a></li>
-                        <li><a href="#agendar">Agendar Hora</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Información Legal</h4>
-                    <ul>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Política de Cookies</a></li>
-                        <li><a href="#">Contacto Legal</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 HF Avanzamed. Todos los derechos reservados. | Desarrollado con ❤️ en Chile</p>
-            </div>
+    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="section-heading left">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 id="faq-title">Antes de tu consulta</h2>
+          <p>Información esencial para saber si la atención online es adecuada para ti.</p>
         </div>
-    </footer>
+        <div class="accordion">
+          <details open>
+            <summary>¿Qué problemas pueden evaluarse online?<span aria-hidden="true">+</span></summary>
+            <p>Muchas consultas de medicina general, revisión de exámenes y controles pueden comenzar por telemedicina. Durante la evaluación se determinará si necesitas atención presencial.</p>
+          </details>
+          <details>
+            <summary>¿Qué necesito para conectarme?<span aria-hidden="true">+</span></summary>
+            <p>Un teléfono, tablet o computador con cámara, micrófono y conexión estable a internet. También es útil disponer de tus medicamentos y exámenes recientes.</p>
+          </details>
+          <details>
+            <summary>¿La consulta online sirve para urgencias?<span aria-hidden="true">+</span></summary>
+            <p>No. Si presentas síntomas graves, deterioro rápido o una situación que pueda poner en riesgo tu vida, debes acudir inmediatamente a un servicio de urgencia.</p>
+          </details>
+          <details>
+            <summary>¿Puedo solicitar recetas u órdenes de exámenes?<span aria-hidden="true">+</span></summary>
+            <p>El profesional definirá durante la consulta si corresponde emitir documentos clínicos, de acuerdo con la evaluación y la normativa aplicable.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section booking" id="agendar" aria-labelledby="booking-title">
+      <div class="container booking-grid">
+        <div class="booking-copy">
+          <p class="eyebrow light">Solicitud de atención</p>
+          <h2 id="booking-title">Cuéntanos cómo podemos ayudarte</h2>
+          <p>Completa el formulario. Prepararemos un resumen para que puedas enviarlo por tu canal de contacto preferido cuando este se encuentre configurado.</p>
+          <div class="privacy-note"><span aria-hidden="true">▣</span><p><strong>No incluyas información clínica sensible.</strong><br>Describe el motivo en términos generales. Los antecedentes detallados se revisan durante la atención.</p></div>
+        </div>
+        <div class="form-card">
+          <div class="setup-badge">Formulario en etapa de configuración</div>
+          <form id="contact-form" novalidate>
+            <div class="field-row">
+              <label>Nombre y apellido<input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" required></label>
+              <label>Teléfono<input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="9 1234 5678" required></label>
+            </div>
+            <label>Correo electrónico<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required></label>
+            <div class="field-row">
+              <label>Tipo de atención<select id="servicio" name="servicio" required><option value="">Selecciona una opción</option><option>Medicina general online</option><option>Revisión de exámenes</option><option>Control o seguimiento</option></select></label>
+              <label>Horario preferido<select id="horario" name="horario" required><option value="">Selecciona un horario</option><option>Mañana</option><option>Tarde</option><option>Indistinto</option></select></label>
+            </div>
+            <label>Motivo general<textarea id="motivo" name="motivo" rows="3" maxlength="300" placeholder="Ej.: deseo revisar resultados de exámenes recientes" required></textarea><small><span id="char-count">0</span>/300 caracteres</small></label>
+            <label class="check"><input id="consentimiento" type="checkbox" required><span>Autorizo el uso de estos datos únicamente para responder mi solicitud.</span></label>
+            <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
+            <button class="button button-primary full" type="submit">Preparar solicitud</button>
+            <p class="form-disclaimer">Este formulario no confirma una reserva ni envía información hasta configurar el canal oficial.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="urgent-note" aria-label="Aviso de urgencias">
+      <div class="container"><span aria-hidden="true">!</span><p><strong>HF Avanzamed no es un servicio de urgencia.</strong> Ante síntomas graves o riesgo vital, llama al SAMU 131 o acude al servicio de urgencia más cercano.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="#inicio"><span class="brand-mark" aria-hidden="true"><span></span></span><span><strong>HF AVANZAMED</strong><small>Centro médico online</small></span></a>
+        <p>Atención médica online, cercana y segura desde Chile.</p>
+      </div>
+      <div><h2>Navegación</h2><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#preguntas">Preguntas frecuentes</a></div>
+      <div><h2>Información</h2><span>Datos de contacto por confirmar</span><span>Horarios por confirmar</span><span>Atención online en Chile</span></div>
+    </div>
+    <div class="container footer-bottom"><p>© <span id="year">2026</span> HF Avanzamed. Todos los derechos reservados.</p><p>La información de este sitio es orientativa y no reemplaza una evaluación médica.</p></div>
+  </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
