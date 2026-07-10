@@ -181,26 +181,31 @@
         <div class="booking-copy">
           <p class="eyebrow light">Solicitud de atención</p>
           <h2 id="booking-title">Cuéntanos cómo podemos ayudarte</h2>
-          <p>Completa el formulario. Prepararemos un resumen para que puedas enviarlo por tu canal de contacto preferido cuando este se encuentre configurado.</p>
+          <p>Elige una fecha y un horario. Al enviar, abriremos WhatsApp con tu solicitud lista para coordinar y confirmar la hora.</p>
+          <div class="contact-shortcuts">
+            <a href="https://wa.me/56956049401" target="_blank" rel="noopener"><span aria-hidden="true">◉</span><span><strong>WhatsApp</strong><small>+56 9 5604 9401</small></span></a>
+            <a href="mailto:rafa.ferrat.soto@gmail.com"><span aria-hidden="true">@</span><span><strong>Correo</strong><small>rafa.ferrat.soto@gmail.com</small></span></a>
+          </div>
           <div class="privacy-note"><span aria-hidden="true">▣</span><p><strong>No incluyas información clínica sensible.</strong><br>Describe el motivo en términos generales. Los antecedentes detallados se revisan durante la atención.</p></div>
         </div>
         <div class="form-card">
-          <div class="setup-badge">Formulario en etapa de configuración</div>
+          <div class="setup-badge ready">Solicitud por WhatsApp habilitada</div>
           <form id="contact-form" novalidate>
             <div class="field-row">
               <label>Nombre y apellido<input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" required></label>
               <label>Teléfono<input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="9 1234 5678" required></label>
             </div>
             <label>Correo electrónico<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required></label>
+            <label>Tipo de atención<select id="servicio" name="servicio" required><option value="">Selecciona una opción</option><option>Medicina general online</option><option>Revisión de exámenes</option><option>Control o seguimiento</option></select></label>
             <div class="field-row">
-              <label>Tipo de atención<select id="servicio" name="servicio" required><option value="">Selecciona una opción</option><option>Medicina general online</option><option>Revisión de exámenes</option><option>Control o seguimiento</option></select></label>
-              <label>Horario preferido<select id="horario" name="horario" required><option value="">Selecciona un horario</option><option>Mañana</option><option>Tarde</option><option>Indistinto</option></select></label>
+              <label>Fecha solicitada<input id="fecha" name="fecha" type="date" required></label>
+              <label>Horario solicitado<select id="horario" name="horario" required><option value="">Selecciona un bloque</option></select></label>
             </div>
             <label>Motivo general<textarea id="motivo" name="motivo" rows="3" maxlength="300" placeholder="Ej.: deseo revisar resultados de exámenes recientes" required></textarea><small><span id="char-count">0</span>/300 caracteres</small></label>
             <label class="check"><input id="consentimiento" type="checkbox" required><span>Autorizo el uso de estos datos únicamente para responder mi solicitud.</span></label>
             <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
-            <button class="button button-primary full" type="submit">Preparar solicitud</button>
-            <p class="form-disclaimer">Este formulario no confirma una reserva ni envía información hasta configurar el canal oficial.</p>
+            <button class="button button-primary full" type="submit">Enviar solicitud por WhatsApp</button>
+            <p class="form-disclaimer">La hora queda pendiente hasta recibir confirmación. Atención entre 10:00 y 18:00, según disponibilidad.</p>
           </form>
         </div>
       </div>
@@ -218,7 +223,8 @@
         <p>Atención médica online, cercana y segura desde Chile.</p>
       </div>
       <div><h2>Navegación</h2><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#preguntas">Preguntas frecuentes</a></div>
-      <div><h2>Información</h2><span>Datos de contacto por confirmar</span><span>Horarios por confirmar</span><span>Atención online en Chile</span></div>
+      <div><h2>Contacto</h2><a href="tel:+56956049401">+56 9 5604 9401</a><a href="mailto:rafa.ferrat.soto@gmail.com">rafa.ferrat.soto@gmail.com</a><span>Atención de 10:00 a 18:00</span></div>
+      <div><h2>Medios de pago</h2><span>Transferencia bancaria</span><span>Efectivo</span><span>Próximamente: tarjetas</span></div>
     </div>
     <div class="container footer-bottom"><p>© <span id="year">2026</span> HF Avanzamed. Todos los derechos reservados.</p><p>La información de este sitio es orientativa y no reemplaza una evaluación médica.</p></div>
   </footer>

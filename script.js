@@ -36,6 +36,23 @@ const message = document.querySelector('#form-message');
 const phone = document.querySelector('#telefono');
 const reason = document.querySelector('#motivo');
 const charCount = document.querySelector('#char-count');
+const dateInput = document.querySelector('#fecha');
+const schedule = document.querySelector('#horario');
+
+const pad = (number) => String(number).padStart(2, '0');
+const localISODate = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+if (dateInput) dateInput.min = localISODate(new Date());
+
+if (schedule) {
+  for (let hour = 10; hour < 18; hour += 1) {
+    ['00', '30'].forEach((minutes) => {
+      const option = document.createElement('option');
+      option.value = `${pad(hour)}:${minutes}`;
+      option.textContent = `${pad(hour)}:${minutes} hrs`;
+      schedule.append(option);
+    });
+  }
+}
 
 phone?.addEventListener('input', () => {
   const digits = phone.value.replace(/\D/g, '').replace(/^56/, '').slice(0, 9);
@@ -71,8 +88,25 @@ form?.addEventListener('submit', (event) => {
     return;
   }
 
+  const date = new Date(`${dateInput.value}T12:00:00`);
+  const formattedDate = new Intl.DateTimeFormat('es-CL', { dateStyle: 'long' }).format(date);
+  const request = [
+    'Hola, quisiera solicitar una hora en HF Avanzamed.',
+    '',
+    `Nombre: ${document.querySelector('#nombre').value.trim()}`,
+    `Teléfono: +56 ${phone.value.trim()}`,
+    `Correo: ${document.querySelector('#email').value.trim()}`,
+    `Atención: ${document.querySelector('#servicio').value}`,
+    `Fecha solicitada: ${formattedDate}`,
+    `Horario solicitado: ${schedule.value} hrs`,
+    `Motivo general: ${reason.value.trim()}`,
+    '',
+    'Entiendo que la hora queda pendiente de confirmación.'
+  ].join('\n');
+
   message.className = 'form-message info';
-  message.textContent = 'La solicitud está lista. Para enviarla, primero debemos configurar el correo o WhatsApp oficial de HF Avanzamed.';
+  message.textContent = 'Abriendo WhatsApp para enviar la solicitud. La hora quedará pendiente de confirmación.';
+  window.open(`https://wa.me/56956049401?text=${encodeURIComponent(request)}`, '_blank', 'noopener');
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();

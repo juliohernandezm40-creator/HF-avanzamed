@@ -151,6 +151,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .privacy-note p { margin: 0; color: #d6e5eb; font-size: 13px; }
 .form-card { position: relative; padding: 34px; color: var(--ink); background: #fff; border-radius: 24px; box-shadow: var(--shadow); }
 .setup-badge { display: inline-block; margin-bottom: 22px; padding: 7px 12px; color: #7a5a14; background: #fff2ce; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+.setup-badge.ready { color: #16604f; background: #def7ed; }
+.contact-shortcuts { display: grid; gap: 10px; margin-top: 28px; }
+.contact-shortcuts a { display: flex; align-items: center; gap: 12px; padding: 14px 16px; color: #fff; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; text-decoration: none; }
+.contact-shortcuts a:hover { background: rgba(255,255,255,.14); }
+.contact-shortcuts a > span:first-child { width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto; color: var(--navy); background: var(--teal); border-radius: 50%; font-weight: 800; }
+.contact-shortcuts strong, .contact-shortcuts small { display: block; }
+.contact-shortcuts small { overflow-wrap: anywhere; color: #c9dce4; }
 .form-card form { display: grid; gap: 17px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .form-card label { display: grid; gap: 7px; color: var(--navy); font-size: 13px; font-weight: 700; }
@@ -171,7 +178,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .urgent-note p { margin: 0; font-size: 13px; }
 
 .footer { padding: 70px 0 24px; color: #bcd0da; background: var(--navy-dark); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 80px; padding-bottom: 50px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr .7fr .9fr .7fr; gap: 56px; padding-bottom: 50px; }
 .brand-footer { color: #fff; }
 .brand-footer .brand-mark span { background: var(--navy-dark); }
 .footer-grid > div:first-child > p { max-width: 340px; }
