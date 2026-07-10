@@ -89,22 +89,33 @@
             <span class="service-number">01</span>
             <div class="service-icon" aria-hidden="true">✚</div>
             <h3>Medicina general online</h3>
-            <p>Evaluación de síntomas frecuentes, enfermedades agudas de baja complejidad y orientación sobre el nivel de atención adecuado.</p>
+            <p>Evaluación de síntomas frecuentes, problemas agudos de baja complejidad y orientación sobre el nivel de atención adecuado.</p>
+            <div class="service-meta"><strong>$15.000</strong><span>15 minutos</span></div>
             <a href="#agendar">Solicitar evaluación <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
             <span class="service-number">02</span>
-            <div class="service-icon" aria-hidden="true">⌕</div>
-            <h3>Revisión de exámenes</h3>
-            <p>Explicación comprensible de resultados y definición de los próximos pasos según los antecedentes clínicos.</p>
-            <a href="#agendar">Consultar <span aria-hidden="true">→</span></a>
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Evaluación médica en salud mental</h3>
+            <p>Primera orientación médica, evaluación general y definición de un plan de seguimiento o derivación cuando corresponda.</p>
+            <div class="service-meta"><strong>$40.000</strong><span>30 minutos</span></div>
+            <a href="#agendar">Solicitar evaluación <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
             <span class="service-number">03</span>
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>Ingreso para manejo médico del peso</h3>
+            <p>Evaluación inicial para adultos, revisión de antecedentes y definición de objetivos y controles clínicos.</p>
+            <div class="service-meta"><strong>$35.000</strong><span>35 minutos</span></div>
+            <a href="#agendar">Solicitar ingreso <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">04</span>
             <div class="service-icon" aria-hidden="true">↻</div>
-            <h3>Controles y seguimiento</h3>
-            <p>Continuidad de cuidados, control de evolución y apoyo para organizar indicaciones y derivaciones.</p>
-            <a href="#agendar">Pedir seguimiento <span aria-hidden="true">→</span></a>
+            <h3>Control de manejo del peso</h3>
+            <p>Seguimiento para adultos, revisión de evolución, tolerancia y ajustes del plan médico cuando corresponda.</p>
+            <div class="service-meta"><strong>$25.000</strong><span>20 minutos</span></div>
+            <a href="#agendar">Solicitar control <span aria-hidden="true">→</span></a>
           </article>
         </div>
         <p class="scope-note"><strong>Importante:</strong> la telemedicina no reemplaza una evaluación presencial cuando existen signos de alarma y no es un servicio de urgencia.</p>
@@ -196,7 +207,13 @@
               <label>Teléfono<input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="9 1234 5678" required></label>
             </div>
             <label>Correo electrónico<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required></label>
-            <label>Tipo de atención<select id="servicio" name="servicio" required><option value="">Selecciona una opción</option><option>Medicina general online</option><option>Revisión de exámenes</option><option>Control o seguimiento</option></select></label>
+            <label>Tipo de atención<select id="servicio" name="servicio" required>
+              <option value="">Selecciona una opción</option>
+              <option value="medicina-general" data-name="Medicina general online" data-duration="15" data-price="$15.000">Medicina general · 15 min · $15.000</option>
+              <option value="salud-mental" data-name="Evaluación médica en salud mental" data-duration="30" data-price="$40.000">Salud mental · 30 min · $40.000</option>
+              <option value="peso-ingreso" data-name="Ingreso para manejo médico del peso" data-duration="35" data-price="$35.000">Manejo del peso: ingreso · 35 min · $35.000</option>
+              <option value="peso-control" data-name="Control de manejo del peso" data-duration="20" data-price="$25.000">Manejo del peso: control · 20 min · $25.000</option>
+            </select></label>
             <div class="field-row">
               <label>Fecha solicitada<input id="fecha" name="fecha" type="date" required></label>
               <label>Horario solicitado<select id="horario" name="horario" required><option value="">Selecciona un bloque</option></select></label>
@@ -205,7 +222,7 @@
             <label class="check"><input id="consentimiento" type="checkbox" required><span>Autorizo el uso de estos datos únicamente para responder mi solicitud.</span></label>
             <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
             <button class="button button-primary full" type="submit">Enviar solicitud por WhatsApp</button>
-            <p class="form-disclaimer">La hora queda pendiente hasta recibir confirmación. Atención entre 10:00 y 18:00, según disponibilidad.</p>
+            <p class="form-disclaimer">La hora queda pendiente hasta recibir confirmación. Atención de martes a sábado, entre 10:00 y 18:00.</p>
           </form>
         </div>
       </div>
@@ -223,7 +240,7 @@
         <p>Atención médica online, cercana y segura desde Chile.</p>
       </div>
       <div><h2>Navegación</h2><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#preguntas">Preguntas frecuentes</a></div>
-      <div><h2>Contacto</h2><a href="tel:+56956049401">+56 9 5604 9401</a><a href="mailto:rafa.ferrat.soto@gmail.com">rafa.ferrat.soto@gmail.com</a><span>Atención de 10:00 a 18:00</span></div>
+      <div><h2>Contacto</h2><a href="tel:+56956049401">+56 9 5604 9401</a><a href="mailto:rafa.ferrat.soto@gmail.com">rafa.ferrat.soto@gmail.com</a><span>Martes a sábado, 10:00–18:00</span></div>
       <div><h2>Medios de pago</h2><span>Transferencia bancaria</span><span>Efectivo</span><span>Próximamente: tarjetas</span></div>
     </div>
     <div class="container footer-bottom"><p>© <span id="year">2026</span> HF Avanzamed. Todos los derechos reservados.</p><p>La información de este sitio es orientativa y no reemplaza una evaluación médica.</p></div>

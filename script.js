@@ -38,21 +38,44 @@ const reason = document.querySelector('#motivo');
 const charCount = document.querySelector('#char-count');
 const dateInput = document.querySelector('#fecha');
 const schedule = document.querySelector('#horario');
+const service = document.querySelector('#servicio');
 
 const pad = (number) => String(number).padStart(2, '0');
 const localISODate = (date) => `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 if (dateInput) dateInput.min = localISODate(new Date());
 
-if (schedule) {
-  for (let hour = 10; hour < 18; hour += 1) {
-    ['00', '30'].forEach((minutes) => {
-      const option = document.createElement('option');
-      option.value = `${pad(hour)}:${minutes}`;
-      option.textContent = `${pad(hour)}:${minutes} hrs`;
-      schedule.append(option);
-    });
+function updateSchedules() {
+  if (!schedule) return;
+  const selected = service?.selectedOptions[0];
+  const duration = Number(selected?.dataset.duration || 0);
+  schedule.innerHTML = '<option value="">Selecciona un bloque</option>';
+  if (!duration) return;
+
+  const opening = 10 * 60;
+  const closing = 18 * 60;
+  for (let start = opening; start + duration <= closing; start += 15) {
+    const hour = Math.floor(start / 60);
+    const minutes = start % 60;
+    const option = document.createElement('option');
+    option.value = `${pad(hour)}:${pad(minutes)}`;
+    option.textContent = `${pad(hour)}:${pad(minutes)} hrs · ${duration} min`;
+    schedule.append(option);
   }
 }
+
+service?.addEventListener('change', updateSchedules);
+
+dateInput?.addEventListener('change', () => {
+  if (!dateInput.value) return;
+  const selectedDate = new Date(`${dateInput.value}T12:00:00`);
+  const day = selectedDate.getDay();
+  if (day === 0 || day === 1) {
+    dateInput.setCustomValidity('La atención se realiza de martes a sábado.');
+    dateInput.reportValidity();
+  } else {
+    dateInput.setCustomValidity('');
+  }
+});
 
 phone?.addEventListener('input', () => {
   const digits = phone.value.replace(/\D/g, '').replace(/^56/, '').slice(0, 9);
@@ -88,6 +111,7 @@ form?.addEventListener('submit', (event) => {
     return;
   }
 
+  const selectedService = service.selectedOptions[0];
   const date = new Date(`${dateInput.value}T12:00:00`);
   const formattedDate = new Intl.DateTimeFormat('es-CL', { dateStyle: 'long' }).format(date);
   const request = [
@@ -96,7 +120,9 @@ form?.addEventListener('submit', (event) => {
     `Nombre: ${document.querySelector('#nombre').value.trim()}`,
     `Teléfono: +56 ${phone.value.trim()}`,
     `Correo: ${document.querySelector('#email').value.trim()}`,
-    `Atención: ${document.querySelector('#servicio').value}`,
+    `Atención: ${selectedService.dataset.name}`,
+    `Duración: ${selectedService.dataset.duration} minutos`,
+    `Valor: ${selectedService.dataset.price}`,
     `Fecha solicitada: ${formattedDate}`,
     `Horario solicitado: ${schedule.value} hrs`,
     `Motivo general: ${reason.value.trim()}`,
