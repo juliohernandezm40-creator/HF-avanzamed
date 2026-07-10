@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es-CL">
 <head>
   <meta charset="utf-8">
@@ -15,6 +15,7 @@
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="inicio">
     <nav class="navbar container" aria-label="Navegación principal">
@@ -46,7 +47,7 @@
             <a class="button button-primary" href="#agendar">Solicitar una hora</a>
             <a class="button button-secondary" href="#como-funciona">Ver cómo funciona <span aria-hidden="true">→</span></a>
           </div>
-          <ul class="trust-list" aria-label="Características de la atención">
+          <ul class="trust-list">
             <li><span aria-hidden="true">✓</span> Consulta 100% online</li>
             <li><span aria-hidden="true">✓</span> Atención profesional</li>
             <li><span aria-hidden="true">✓</span> Seguimiento personalizado</li>
@@ -91,7 +92,7 @@
             <h3>Medicina general online</h3>
             <p>Evaluación de síntomas frecuentes, problemas agudos de baja complejidad y orientación sobre el nivel de atención adecuado.</p>
             <div class="service-meta"><strong>$15.000</strong><span>15 minutos</span></div>
-            <a href="#agendar">Solicitar evaluación <span aria-hidden="true">→</span></a>
+            <a href="#agendar" data-service="medicina-general">Agendar este servicio <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
             <span class="service-number">02</span>
@@ -99,7 +100,7 @@
             <h3>Evaluación médica en salud mental</h3>
             <p>Primera orientación médica, evaluación general y definición de un plan de seguimiento o derivación cuando corresponda.</p>
             <div class="service-meta"><strong>$40.000</strong><span>30 minutos</span></div>
-            <a href="#agendar">Solicitar evaluación <span aria-hidden="true">→</span></a>
+            <a href="#agendar" data-service="salud-mental">Agendar este servicio <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
             <span class="service-number">03</span>
@@ -107,7 +108,7 @@
             <h3>Ingreso para manejo médico del peso</h3>
             <p>Evaluación inicial para adultos, revisión de antecedentes y definición de objetivos y controles clínicos.</p>
             <div class="service-meta"><strong>$35.000</strong><span>35 minutos</span></div>
-            <a href="#agendar">Solicitar ingreso <span aria-hidden="true">→</span></a>
+            <a href="#agendar" data-service="peso-ingreso">Agendar este servicio <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
             <span class="service-number">04</span>
@@ -115,7 +116,7 @@
             <h3>Control de manejo del peso</h3>
             <p>Seguimiento para adultos, revisión de evolución, tolerancia y ajustes del plan médico cuando corresponda.</p>
             <div class="service-meta"><strong>$25.000</strong><span>20 minutos</span></div>
-            <a href="#agendar">Solicitar control <span aria-hidden="true">→</span></a>
+            <a href="#agendar" data-service="peso-control">Agendar este servicio <span aria-hidden="true">→</span></a>
           </article>
         </div>
         <p class="scope-note"><strong>Importante:</strong> la telemedicina no reemplaza una evaluación presencial cuando existen signos de alarma y no es un servicio de urgencia.</p>
@@ -202,26 +203,48 @@
         <div class="form-card">
           <div class="setup-badge ready">Solicitud por WhatsApp habilitada</div>
           <form id="contact-form" novalidate>
-            <div class="field-row">
-              <label>Nombre y apellido<input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" required></label>
-              <label>Teléfono<input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="9 1234 5678" required></label>
-            </div>
-            <label>Correo electrónico<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required></label>
-            <label>Tipo de atención<select id="servicio" name="servicio" required>
-              <option value="">Selecciona una opción</option>
-              <option value="medicina-general" data-name="Medicina general online" data-duration="15" data-price="$15.000">Medicina general · 15 min · $15.000</option>
-              <option value="salud-mental" data-name="Evaluación médica en salud mental" data-duration="30" data-price="$40.000">Salud mental · 30 min · $40.000</option>
-              <option value="peso-ingreso" data-name="Ingreso para manejo médico del peso" data-duration="35" data-price="$35.000">Manejo del peso: ingreso · 35 min · $35.000</option>
-              <option value="peso-control" data-name="Control de manejo del peso" data-duration="20" data-price="$25.000">Manejo del peso: control · 20 min · $25.000</option>
-            </select></label>
-            <div class="field-row">
-              <label>Fecha solicitada<input id="fecha" name="fecha" type="date" required></label>
-              <label>Horario solicitado<select id="horario" name="horario" required><option value="">Selecciona un bloque</option></select></label>
-            </div>
-            <label>Motivo general<textarea id="motivo" name="motivo" rows="3" maxlength="300" placeholder="Ej.: deseo revisar resultados de exámenes recientes" required></textarea><small><span id="char-count">0</span>/300 caracteres</small></label>
-            <label class="check"><input id="consentimiento" type="checkbox" required><span>Autorizo el uso de estos datos únicamente para responder mi solicitud.</span></label>
+            <ol class="form-progress">
+              <li class="active" data-progress="0"><span>1</span><small>Servicio</small></li>
+              <li data-progress="1"><span>2</span><small>Horario</small></li>
+              <li data-progress="2"><span>3</span><small>Datos</small></li>
+            </ol>
+
+            <fieldset class="form-step active" data-step="0">
+              <legend>¿Qué atención necesitas?</legend>
+              <label>Tipo de atención<select id="servicio" name="servicio" required>
+                <option value="">Selecciona una opción</option>
+                <option value="medicina-general" data-name="Medicina general online" data-duration="15" data-price="$15.000">Medicina general · 15 min · $15.000</option>
+                <option value="salud-mental" data-name="Evaluación médica en salud mental" data-duration="30" data-price="$40.000">Salud mental · 30 min · $40.000</option>
+                <option value="peso-ingreso" data-name="Ingreso para manejo médico del peso" data-duration="35" data-price="$35.000">Manejo del peso: ingreso · 35 min · $35.000</option>
+                <option value="peso-control" data-name="Control de manejo del peso" data-duration="20" data-price="$25.000">Manejo del peso: control · 20 min · $25.000</option>
+              </select></label>
+              <div class="selected-service" id="selected-service" aria-live="polite"></div>
+              <div class="form-actions end"><button class="button button-primary" type="button" data-next>Siguiente <span aria-hidden="true">→</span></button></div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="1">
+              <legend>Elige fecha y horario</legend>
+              <div class="field-row">
+                <label>Fecha solicitada<input id="fecha" name="fecha" type="date" required></label>
+                <label>Horario solicitado<select id="horario" name="horario" required><option value="">Selecciona un bloque</option></select></label>
+              </div>
+              <p class="step-help">Atención de martes a sábado, entre 10:00 y 18:00. La hora queda pendiente de confirmación.</p>
+              <div class="form-actions"><button class="button button-ghost" type="button" data-back>← Volver</button><button class="button button-primary" type="button" data-next>Siguiente →</button></div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="2">
+              <legend>Datos de contacto</legend>
+              <div class="field-row">
+                <label>Nombre y apellido<input id="nombre" name="nombre" type="text" autocomplete="name" minlength="3" required></label>
+                <label>Teléfono<input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="9 1234 5678" required></label>
+              </div>
+              <label>Correo electrónico<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required></label>
+              <label>Motivo general<textarea id="motivo" name="motivo" rows="3" maxlength="300" placeholder="Ej.: deseo revisar resultados de exámenes recientes" required></textarea><small><span id="char-count">0</span>/300 caracteres</small></label>
+              <div class="request-summary" id="request-summary" aria-live="polite"></div>
+              <label class="check"><input id="consentimiento" type="checkbox" required><span>Autorizo el uso de estos datos únicamente para responder mi solicitud.</span></label>
+              <div class="form-actions"><button class="button button-ghost" type="button" data-back>← Volver</button><button class="button button-primary" type="submit">Enviar por WhatsApp</button></div>
+            </fieldset>
             <div id="form-message" class="form-message" role="status" aria-live="polite"></div>
-            <button class="button button-primary full" type="submit">Enviar solicitud por WhatsApp</button>
             <p class="form-disclaimer">La hora queda pendiente hasta recibir confirmación. Atención de martes a sábado, entre 10:00 y 18:00.</p>
           </form>
         </div>
@@ -240,11 +263,13 @@
         <p>Atención médica online, cercana y segura desde Chile.</p>
       </div>
       <div><h2>Navegación</h2><a href="#servicios">Servicios</a><a href="#como-funciona">Cómo funciona</a><a href="#nosotros">Nosotros</a><a href="#preguntas">Preguntas frecuentes</a></div>
-      <div><h2>Contacto</h2><a href="tel:+56956049401">+56 9 5604 9401</a><a href="mailto:rafa.ferrat.soto@gmail.com">rafa.ferrat.soto@gmail.com</a><span>Martes a sábado, 10:00–18:00</span></div>
+      <div><h2>Contacto</h2><a href="tel:+56956049401">+56&nbsp;9&nbsp;5604&nbsp;9401</a><a href="mailto:rafa.ferrat.soto@gmail.com">rafa.ferrat.soto@gmail.com</a><span>Martes a sábado, 10:00–18:00</span></div>
       <div><h2>Medios de pago</h2><span>Transferencia bancaria</span><span>Efectivo</span><span>Próximamente: tarjetas</span></div>
     </div>
     <div class="container footer-bottom"><p>© <span id="year">2026</span> HF Avanzamed. Todos los derechos reservados.</p><p>La información de este sitio es orientativa y no reemplaza una evaluación médica.</p></div>
   </footer>
+  <a class="whatsapp-float" href="https://wa.me/56956049401?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20HF%20Avanzamed." target="_blank" rel="noopener" aria-label="Consultar disponibilidad por WhatsApp"><span aria-hidden="true">◉</span><strong>Consultar</strong></a>
+  <button class="back-to-top" type="button" aria-label="Volver al inicio">↑</button>
   <script src="script.js" defer></script>
 </body>
 </html>
